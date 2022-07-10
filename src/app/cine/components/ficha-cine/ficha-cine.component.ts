@@ -13,6 +13,7 @@ export class FichaCineComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
