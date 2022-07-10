@@ -1,1 +1,8 @@
-<p>trending works!</p>
+<div class="row">
+    <div
+        *ngFor="let ficha of trending">
+        <app-ficha-cine [ficha]="ficha"></app-ficha-cine>
+
+    </div>
+</div>
+

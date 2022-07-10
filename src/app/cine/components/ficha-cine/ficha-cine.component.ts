@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Result } from '../../interfaces/cine-interfaces';
 
 @Component({
   selector: 'app-ficha-cine',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ficha-cine.component.css']
 })
 export class FichaCineComponent implements OnInit {
+
+  @Input() ficha!: Result;
 
   constructor() { }
 

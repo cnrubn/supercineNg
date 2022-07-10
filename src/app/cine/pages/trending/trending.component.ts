@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CineService } from '../../cine.service';
+import { Result, TrendingInterface } from '../../interfaces/cine-interfaces';
 
 @Component({
   selector: 'app-trending',
   templateUrl: './trending.component.html',
   styleUrls: ['./trending.component.css']
 })
-export class TrendingComponent implements OnInit {
+export class TrendingComponent {
 
-  constructor() { }
+  trending: Result[] = [];
 
-  ngOnInit(): void {
+  constructor( private cineService: CineService ) { 
+    this.cineService.getTrending()
+      .subscribe( data => {
+        this.trending = data.results;
+        console.log( this.trending );
+      })
   }
-
 }
+
