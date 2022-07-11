@@ -1,1 +1,10 @@
-<p>favoritos works!</p>
+
+<div class="contenedorFicha d-flex flex-wrap justify-content-evenly"
+    >
+    <app-ficha-cine 
+        *ngFor="let ficha of historialLS"
+        [ficha]="ficha"
+        ></app-ficha-cine>
+
+</div>
+

@@ -15,7 +15,7 @@ export class TrendingComponent {
     this.cineService.getTrending()
       .subscribe( data => {
         this.trending = data.results;
-        console.log( this.trending );
+        // console.log( this.trending );
       })
   }
 }

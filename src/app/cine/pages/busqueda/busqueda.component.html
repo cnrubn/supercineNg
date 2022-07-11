@@ -6,14 +6,14 @@
 
 </div> 
 
-<div class="row">
-    <div
-        *ngFor="let ficha of resultados">
+<div         class="d-flex flex-wrap justify-content-evenly "
+        >
         
         <app-ficha-cine 
+        class="d-flex flex-wrap justify-content-evenly"
+        *ngFor="let ficha of resultados"
             [ficha]="ficha"
             ></app-ficha-cine>
 
 
-    </div>
 </div>

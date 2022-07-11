@@ -1,8 +1,18 @@
 .contenidoFicha {
     border: 1px solid #000;
-    width: 240px;
+    width: 200px;
+    margin: 5px 5px;
+    cursor: pointer;
+}
+
+.marcoFicha img {
+    width: 100%;
 }
 
 .fav {
     background-color: #ccc;
+}
+
+.activo {
+    background-color: red;
 }

@@ -36,6 +36,8 @@ export class CineService {
     return this.http.get<BusquedaInterface>( url );
 
   }
+
+  
     
   
 }

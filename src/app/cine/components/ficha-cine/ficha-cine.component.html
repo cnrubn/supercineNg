@@ -1,19 +1,35 @@
+
+
+
 <div class="contenidoFicha">
+
 
     <div class="marcoFicha"
         [routerLink]="['/info',ficha.id]"
+        
         >
 
-
+        <img [src]="baseUrlImg+ficha.poster_path" [alt]="ficha.title">
 
         <p>{{ ficha.title }}</p>
+        <p>{{ ficha.id }}</p>
 
         
         
     </div>
-    <div class="fav">Fav</div>
+    <div class="fav"
+         (click)="guardarLocalStorage(ficha)"
+
+
+            >
+            Fas
+    </div>
 
 </div>
+
+
+
+
     
 
 
