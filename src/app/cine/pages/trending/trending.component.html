@@ -1,10 +1,13 @@
-<div class="row">
-    <div
+<div class="row d-flex flex-wrap justify-content-evenly">
+    <div class="contenedorFicha"
         *ngFor="let ficha of trending">
         <app-ficha-cine 
+            class=" d-flex flex-wrap justify-content-evenly"
             [ficha]="ficha"
             ></app-ficha-cine>
 
     </div>
 </div>
+
+
 

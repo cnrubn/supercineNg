@@ -8,7 +8,7 @@ import { Result } from '../../interfaces/cine-interfaces';
 })
 export class FichaCineComponent implements OnInit {
 
-  @Input() ficha!: Result;
+  @Input() ficha!: any;
 
   constructor() { }
 

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { BusquedaInterface } from './interfaces/busqueda-interfaces';
 import { Result, TrendingInterface } from './interfaces/cine-interfaces';
 import { DetallesInterface } from './interfaces/detalles-interfaces';
 
@@ -22,7 +23,18 @@ export class CineService {
   }
 
   getPeliPorId( id: number ): Observable<DetallesInterface> {
-    return this.http.get<DetallesInterface>(`${this.trendingUrl}/movie/${id}?api_key=${environment.keyApi}&language=es-ES`)
+
+    const url: string = `${this.trendingUrl}/movie/${id}?api_key=${environment.keyApi}&language=es-ES`
+    
+    return this.http.get<DetallesInterface>( url )
+  }
+
+  buscarPeli( termino: string ): Observable<BusquedaInterface> {
+
+    const url: string = `${this.trendingUrl}/search/movie?api_key=85aaca70a36d11ff3618ad70b7761f94&language=es-ES&query=${termino}&page=1&include_adult=false`
+    
+    return this.http.get<BusquedaInterface>( url );
+
   }
     
   

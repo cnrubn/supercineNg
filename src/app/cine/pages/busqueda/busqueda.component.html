@@ -1,1 +1,19 @@
-<p>busqueda works!</p>
+<div>
+        
+    <input type="text" 
+           class="form-control" 
+           placeholder="Los Vengadores..." (input)="busqueda($event)">
+
+</div> 
+
+<div class="row">
+    <div
+        *ngFor="let ficha of resultados">
+        
+        <app-ficha-cine 
+            [ficha]="ficha"
+            ></app-ficha-cine>
+
+
+    </div>
+</div>

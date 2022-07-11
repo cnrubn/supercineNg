@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CineService } from '../../cine.service';
-import { Result, TrendingInterface } from '../../interfaces/cine-interfaces';
+import { Result } from '../../interfaces/cine-interfaces';
 
 @Component({
   selector: 'app-trending',
