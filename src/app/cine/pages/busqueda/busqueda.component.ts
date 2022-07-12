@@ -12,6 +12,12 @@ export class BusquedaComponent implements OnInit {
 
   private debounceTimer?: any;
   resultados: Result[] = [];
+
+  trending: Result[] = [];
+
+  resultadoTrend: Result[] = [];
+
+  historialLS: number[] = [];
   
   constructor( private cineService: CineService ) { }
 
@@ -19,6 +25,12 @@ export class BusquedaComponent implements OnInit {
   }
 
   busqueda( event: any ) {
+
+    this.historialLS = JSON.parse(localStorage.getItem('miArrayCI')!) || [];
+
+    
+    // console.log('histo', this.historialLS );
+    
 
     if ( this.debounceTimer ) clearTimeout( this.debounceTimer );
 
@@ -34,7 +46,39 @@ export class BusquedaComponent implements OnInit {
       this.cineService.buscarPeli( termino )
       .subscribe( data => {
         this.resultados = data.results
-        console.log(this.resultados)
+
+        this.resultadoTrend = this.resultados.map( ({ id, title, poster_path }: Result ) => {
+          return {
+            id,
+            title,
+            poster_path,
+            favCheck: false
+            
+            
+          }
+
+        })
+
+        this.historialLS.forEach( (data) => {
+          this.resultadoTrend.forEach( (dataTrend, index) => 
+          {
+
+            if ( data === dataTrend.id ) {
+              // console.log('son iguales',dataTrend.id, data);
+
+              dataTrend.favCheck = true;
+              
+              // console.log('posición', dataTrend);
+
+            }
+            
+            // console.log('id',dataTrend.id)
+          })
+          // console.log('LS',data);
+        })
+        
+        
+        // console.log(this.resultados)
       });
       
     }, 350 );

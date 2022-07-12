@@ -12,6 +12,7 @@ export class FavoritosComponent implements OnInit {
 
   @Input() _historial!: any;
 
+  // copiaFavs: number[] = [];
   // activo: boolean = false;
 
 
@@ -24,20 +25,24 @@ export class FavoritosComponent implements OnInit {
 
     this._historial = JSON.parse(localStorage.getItem('miArrayCI')!) || [];
 
-    // console.log(this._historial)
+    // this.copiaFavs = this._historial;
+
+    // console.log(this.copiaFavs)
 
 
 
     // CONSTRUCCIÓN ARRAY
     this._historial.forEach(
       (data:any) =>
+         
+
       {
 
         this.cineService.getPeliPorId( data )
         
         .subscribe( data => {
           this.historialLS.push(data);
-          // console.log(this.historialLS)
+          // console.log('historialLS',this.historialLS)
 
           // this.activo = true;
           // console.log('activo: ',this.activo)

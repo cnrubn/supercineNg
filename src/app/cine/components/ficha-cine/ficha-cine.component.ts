@@ -1,4 +1,8 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { pipe, Subject } from 'rxjs';
+
+import { tap } from 'rxjs/operators';
+import { CineService } from '../../cine.service';
 
 
 @Component({
@@ -9,7 +13,13 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 export class FichaCineComponent implements OnInit {
 
   @Input() ficha!: any;
+  @Input() idFav!: any;
+  // @Input() idTrend!: any;
 
+
+  activo: boolean = false;
+  // idFav:any;
+  
   
   index: number = -1;
 
@@ -29,7 +39,10 @@ export class FichaCineComponent implements OnInit {
   
 
 
-  constructor() {
+
+
+  constructor(  private cineService: CineService  ) {
+
 
 
 
@@ -37,12 +50,8 @@ export class FichaCineComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // console.log('idFav',this.idFav);
 
-    this._historial = JSON.parse(localStorage.getItem('miArrayCI')!) || [];
-    
-
-
-    
   }
   
 
@@ -54,7 +63,7 @@ export class FichaCineComponent implements OnInit {
 
     if( this._historial.length === 0 ) {
       this._historial.push(data.id);
-      // this.activo = true;
+      this.activo = true;
 
       localStorage.setItem('miArrayCI', JSON.stringify( this._historial));
       return;
@@ -63,27 +72,51 @@ export class FichaCineComponent implements OnInit {
     this._historial.forEach(
       dataLS => {
 
+        // console.log('dataLS',dataLS);
+
+        
         if( dataLS === data.id ) {
           this.index = this._historial.indexOf(data.id)
-          // console.log('index', this.index); 
 
+
+          
           return;
-        }
+        } 
       }
     )
 
+    // console.log('this.index',this.index);
+
+    
     if ( this.index === -1 ) {
       this._historial.push(data.id);
-      // this.activo = true;
-    } else {
-      this._historial.splice(this.index, 1);
-    }
+      this.activo = true;
 
-    localStorage.setItem('miArrayCI', JSON.stringify( this._historial));
-    
-    // console.log(this.activo);
+      // console.log('añade',this._historial);
+
+      
+    } else {
+      this.activo = false;
+      this.idFav = 0;
+      this.ficha.favCheck = false;
+      this._historial.splice(this.index, 1);
+      this.index = -1
+
+      // console.log('elimina',this._historial);
+
 
   }
+
+    
+    localStorage.setItem('miArrayCI', JSON.stringify( this._historial));
+    
+    
+    // console.log(this._historial);
+
+
+    
+  }
+
 
 
 
