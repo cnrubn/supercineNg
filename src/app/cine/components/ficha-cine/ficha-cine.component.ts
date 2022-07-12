@@ -1,8 +1,9 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { pipe, Subject } from 'rxjs';
 
 import { tap } from 'rxjs/operators';
 import { CineService } from '../../cine.service';
+import { CanLoad } from '@angular/router';
 
 
 @Component({
@@ -45,13 +46,14 @@ export class FichaCineComponent implements OnInit {
 
 
 
-
   }
 
   ngOnInit(): void {
 
     // console.log('idFav',this.idFav);
 
+
+    
   }
   
 
@@ -102,10 +104,13 @@ export class FichaCineComponent implements OnInit {
       this._historial.splice(this.index, 1);
       this.index = -1
 
+
+      // this._historial.filter(data => console.log('filtro',data));
       // console.log('elimina',this._historial);
 
 
-  }
+
+    }
 
     
     localStorage.setItem('miArrayCI', JSON.stringify( this._historial));
@@ -114,6 +119,10 @@ export class FichaCineComponent implements OnInit {
     // console.log(this._historial);
 
 
+
+
+    
+    
     
   }
 

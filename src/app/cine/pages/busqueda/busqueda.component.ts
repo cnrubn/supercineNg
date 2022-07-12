@@ -26,7 +26,7 @@ export class BusquedaComponent implements OnInit {
 
   busqueda( event: any ) {
 
-    this.historialLS = JSON.parse(localStorage.getItem('miArrayCI')!) || [];
+    // this.historialLS = JSON.parse(localStorage.getItem('miArrayCI')!) || [];
 
     
     // console.log('histo', this.historialLS );
@@ -37,7 +37,7 @@ export class BusquedaComponent implements OnInit {
     const termino: string = event.target.value;
 
     if ( termino === '' ){
-      this.resultados = [];
+      this.resultadoTrend = [];
       return;
     }
     
@@ -78,10 +78,9 @@ export class BusquedaComponent implements OnInit {
         })
         
         
-        // console.log(this.resultados)
       });
       
-    }, 350 );
+    }, 250 );
     
   }
 
