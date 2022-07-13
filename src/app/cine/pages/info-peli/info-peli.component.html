@@ -1,1 +1,42 @@
-<p>info-peli works!</p>
+<div class="fondo">
+
+    <div class="contenedorFicha d-flex flex-wrap justify-content-center">
+
+        <div class="contenedorImg">
+            <img [src]="baseUrlImg+peli.poster_path" [alt]="peli.title">
+        </div>
+
+        <div class="contenedorInfo flex-grow-1  ">
+
+            <h3>{{peli.title}}</h3>
+            <p>{{peli.overview}}</p>            
+            <p>{{peli.release_date | date: 'd MMM y'}}</p>     
+
+            <div class="listaGeneros">
+                <ul class="d-flex flex-wrap justify-content-center">
+                    <li *ngFor="let gen of generos, let i = index">{{generos[i].name}}</li>
+                </ul>
+            </div>
+
+            <p class="nota " 
+               [ngClass]="{'suspenso': peli.vote_average <= 4,'notable': peli.vote_average >= 7 }"
+            >{{peli.vote_average | number: '0.1-2'}}</p> 
+            
+        </div>
+
+        <!-- <div class="contenedorBotonera d-flex flex-wrap flex-column justify-content-start">
+
+            <div class="favorito">
+                Fav
+            </div>
+
+            <div class="atras"
+                 (click)="goBack()">
+                Atrás
+            </div>
+
+            
+        </div> -->
+        
+    </div>
+</div>

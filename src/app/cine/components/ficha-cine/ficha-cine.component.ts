@@ -18,6 +18,7 @@ export class FichaCineComponent implements OnInit {
   // @Input() idTrend!: any;
 
 
+
   activo: boolean = false;
   // idFav:any;
   
@@ -30,7 +31,7 @@ export class FichaCineComponent implements OnInit {
   _historial: string[] = [];
   
 
-  baseUrlImg: string = 'https://image.tmdb.org/t/p/w500'
+  baseUrlImg: string = 'https://image.tmdb.org/t/p/w500';
   
 
   

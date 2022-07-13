@@ -17,6 +17,7 @@ export class FavoritosComponent implements OnInit, DoCheck {
   contadorFav: number = 0;
 
 
+
   constructor( private cineService: CineService ) {}
 
   ngDoCheck(): void {

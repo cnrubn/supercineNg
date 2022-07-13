@@ -1,0 +1,76 @@
+.fondo {
+    background-color: var(--fondoSecundario);
+    padding: 30px 0;
+}
+
+.contenedorFicha {
+    background-color: var(--fondoPrincipal);
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.contenedorFicha .contenedorImg {
+    /* text-align: center; */
+}
+
+.contenedorFicha .contenedorImg img {
+    width: 100%;
+}
+ 
+.contenedorFicha .contenedorInfo {
+    padding: 40px;
+    width: 50%;
+    width: 400px;
+}
+ 
+.contenedorFicha .contenedorInfo h3 {
+    padding: 40px 0 20px 0;
+    border-bottom: 1px solid var(--acentoColor);
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: bold;
+}
+ 
+.contenedorFicha .contenedorInfo p {
+    margin-bottom: 50px;
+    font-size: 25px;
+}
+
+.contenedorFicha .contenedorInfo .listaGeneros {
+    margin: 15px 5px 45px 5px;
+}
+
+.contenedorFicha .contenedorInfo ul li {
+    list-style: none;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: 1px solid #fff;
+    margin: 5px;
+}
+
+.contenedorFicha .contenedorInfo .nota {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: var(--acentoColor);
+    border-radius: 4px;
+    color: black;
+}
+
+.contenedorFicha .contenedorInfo .nota.notable {
+    background-color: rgb(128, 255, 0);
+}
+
+.contenedorFicha .contenedorInfo .nota.suspenso {
+    background-color: red;
+} 
+
+/* BOTONERA */
+
+.contenedorBotonera {
+    background-color: red;
+}

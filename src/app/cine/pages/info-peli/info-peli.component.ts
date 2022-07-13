@@ -3,8 +3,8 @@ import { CineService } from '../../cine.service';
 import { Result } from '../../interfaces/cine-interfaces';
 
 import { switchMap } from 'rxjs/operators'
-import { ActivatedRoute } from '@angular/router';
-import { DetallesInterface } from '../../interfaces/detalles-interfaces';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DetallesInterface, Genre } from '../../interfaces/detalles-interfaces';
 
 
 @Component({
@@ -15,13 +15,22 @@ import { DetallesInterface } from '../../interfaces/detalles-interfaces';
 export class InfoPeliComponent implements OnInit {
 
   peli!: DetallesInterface;
+  generos:any;
+  baseUrlImg: string = 'https://image.tmdb.org/t/p/w500';
+
+  @Input() _historial!: any;
 
 
   constructor( private cineService: CineService,
-               private activatedRoute: ActivatedRoute, ) {
+               private activatedRoute: ActivatedRoute,
+               private router: Router  ) {
    }
 
   ngOnInit(): void {
+
+    // this._historial = JSON.parse(localStorage.getItem('miArrayCI')!) || [];
+
+    console.log('historial',this._historial);
 
     this.activatedRoute.params
       .subscribe( params => {
@@ -32,7 +41,11 @@ export class InfoPeliComponent implements OnInit {
         
           .subscribe( data => {
             this.peli = data;
-            console.log(this.peli)
+            // console.log('peli: ',this.peli);
+
+            this.generos = this.peli.genres;
+            // console.log('peli2: ',this.generos)
+
           })
         
       })
@@ -41,4 +54,11 @@ export class InfoPeliComponent implements OnInit {
   }
 
 
+
+  // goBack() {
+  //   this.router.navigate(['/favoritos']);
+  // }
+  
+  
+  
 }
