@@ -1,3 +1,22 @@
-* {
-    background-color: blanchedalmond;
+.menu {
+    margin: 25px 0;
+    color: var(--textoSecundario);
+    font-size: 25px;
+}
+
+.menu .elementoMenu {
+    list-style: none;
+    cursor: pointer;
+    padding: 15px 20px 5px 20px;
+
+}
+
+.menu .elementoMenu.active {
+    border-bottom: 2px solid var(--acentoColor);
+    color: var(--textoColor);
+}
+
+.menu .elementoMenu:hover {
+    border-bottom: 2px solid var(--acentoColor);
+    color: var(--textoColor);
 }

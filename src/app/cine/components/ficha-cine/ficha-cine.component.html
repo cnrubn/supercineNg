@@ -1,31 +1,20 @@
-
-
-
-    <div 
-
-    class="contenidoFicha"
-        >
-
+<div class="contenidoFicha">
 
    <div class="marcoFicha"
-       [routerLink]="['/info',ficha.id]"
-       
-       >
+       [routerLink]="['/info',ficha.id]">
 
        <img [src]="baseUrlImg+ficha.poster_path" [alt]="ficha.title">
 
        <p>{{ ficha.title }}</p>
-       <p>{{ ficha.id }}</p>
-
-
-       
-       
+           
    </div>
    <div class="fav"
         (click)="guardarLocalStorage(ficha)"
-        [ngClass]="{'activo': ficha.id === idFav ||activo || ficha.favCheck}"
-           >
-           Fas
+        [ngClass]="{'activo': ficha.id === idFav ||activo || ficha.favCheck}">
+
+        <i class="fa-solid fa-star"></i>
+        
+           
    </div>
 
 </div> 
