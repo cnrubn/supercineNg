@@ -4,11 +4,18 @@
        [routerLink]="['/info',ficha.id]">
 
        <img [src]="baseUrlImg+ficha.poster_path" [alt]="ficha.title">
-
-       <p>{{ ficha.title }}</p>
            
    </div>
-   <div class="fav"
+
+   <div class="titulo"
+        [routerLink]="['/info',ficha.id]">
+
+        <p>{{ ficha.title }}</p>
+
+   </div>
+   
+   
+   <div class="estrellaFav"
         (click)="guardarLocalStorage(ficha)"
         [ngClass]="{'activo': ficha.id === idFav ||activo || ficha.favCheck}">
 

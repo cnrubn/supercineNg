@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CineService } from '../../cine.service';
 import { Result } from '../../interfaces/busqueda-interfaces';
 
@@ -8,29 +8,18 @@ import { Result } from '../../interfaces/busqueda-interfaces';
   templateUrl: './busqueda.component.html',
   styleUrls: ['./busqueda.component.css']
 })
-export class BusquedaComponent implements OnInit {
+export class BusquedaComponent {
 
   private debounceTimer?: any;
   resultados: Result[] = [];
-
   trending: Result[] = [];
-
   resultadoTrend: Result[] = [];
-
   historialLS: number[] = [];
   
   constructor( private cineService: CineService ) { }
 
-  ngOnInit(): void {
-  }
-
+  
   busqueda( event: any ) {
-
-    // this.historialLS = JSON.parse(localStorage.getItem('miArrayCI')!) || [];
-
-    
-    // console.log('histo', this.historialLS );
-    
 
     if ( this.debounceTimer ) clearTimeout( this.debounceTimer );
 
@@ -52,9 +41,7 @@ export class BusquedaComponent implements OnInit {
             id,
             title,
             poster_path,
-            favCheck: false
-            
-            
+            favCheck: false        
           }
 
         })
@@ -64,19 +51,10 @@ export class BusquedaComponent implements OnInit {
           {
 
             if ( data === dataTrend.id ) {
-              // console.log('son iguales',dataTrend.id, data);
-
               dataTrend.favCheck = true;
-              
-              // console.log('posición', dataTrend);
-
             }
-            
-            // console.log('id',dataTrend.id)
           })
-          // console.log('LS',data);
         })
-        
         
       });
       

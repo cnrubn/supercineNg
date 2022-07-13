@@ -1,0 +1,13 @@
+.contenedorFicha {
+    z-index: 10;
+    background-color: var(--fondoPrincipal);
+}
+
+.favVacio {
+    text-align: center;
+    background-color: var(--fondoSecundario);
+    font-size: 40px;
+    padding: 200px 0;
+    color: var(--textoSecundario);
+}
+

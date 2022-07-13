@@ -1,19 +1,36 @@
-<div>
-        
-    <input type="text" 
-           class="form-control" 
-           placeholder="Los Vengadores..." (input)="busqueda($event)">
+<div class="barraBusqueda d-flex flex-wrap justify-content-center">
 
+    <div class="contenedorInput">
+        <input type="text" 
+        class="form-control" 
+        placeholder="Los Vengadores..." (input)="busqueda($event)">
+    </div>
+     
 </div> 
 
-<div         class="d-flex flex-wrap justify-content-evenly "
-        >
-        
-        <app-ficha-cine 
-        class="d-flex flex-wrap justify-content-evenly"
-        *ngFor="let ficha of resultadoTrend"
-            [ficha]="ficha"
-            ></app-ficha-cine>
 
+<div class="busqVacio" 
+     *ngIf="resultadoTrend.length === 0; else busquedaVacio">
+     
+     <p>Busca tus películas favoritas aquí y añádelas a tus favoritos o consulta su información completa.</p>
+       
 
 </div>
+
+
+<ng-template #busquedaVacio>
+
+
+    <div class=" contenedorFicha d-flex flex-wrap justify-content-evenly "
+            >
+            
+            <app-ficha-cine 
+            class="d-flex flex-wrap justify-content-evenly"
+            *ngFor="let ficha of resultadoTrend"
+                [ficha]="ficha"
+                ></app-ficha-cine>
+
+
+    </div>
+
+</ng-template>

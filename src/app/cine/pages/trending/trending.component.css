@@ -1,0 +1,4 @@
+.contenedorFicha {
+    z-index: 10;
+    background-color: var(--fondoPrincipal);
+}

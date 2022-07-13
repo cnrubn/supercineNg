@@ -1,0 +1,28 @@
+.contenedorFicha {
+    z-index: 10;
+    background-color: var(--fondoPrincipal);
+}
+
+.barraBusqueda {
+    margin-bottom: 20px;
+}
+
+.barraBusqueda .contenedorInput {
+    margin: 0 20px;
+    width: 820px;
+}
+
+.barraBusqueda .contenedorInput input {
+    background-color: var(--fondoSecundario);
+    font-size: 20px;
+    color: var(--textoSecundario);
+    border: black;
+}
+
+.busqVacio {
+    text-align: center;
+    background-color: var(--fondoSecundario);
+    font-size: 40px;
+    padding: 200px 0;
+    color: var(--textoSecundario);
+}

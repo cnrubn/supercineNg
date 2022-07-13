@@ -1,13 +1,26 @@
 
-<div class="contenedorFicha d-flex flex-wrap justify-content-evenly"
-    >
-    <app-ficha-cine 
-        *ngFor="let ficha of historialLS"
-        [ficha]="ficha"
-        [idFav]="ficha.id"
-        ></app-ficha-cine>
-
-
+<div class="favVacio" 
+     *ngIf="historialLS.length === 0; else favoritosVacio">
+     
+     <p>Busca la estrella <span><i class="fa-solid fa-star"></i></span> en tus películas preferidas para coleccionarlas aquí.</p>
+       
 
 </div>
+
+
+<ng-template #favoritosVacio>
+
+    <div class="contenedorFicha d-flex flex-wrap justify-content-evenly"
+        >
+        <app-ficha-cine 
+            *ngFor="let ficha of historialLS"
+            [ficha]="ficha"
+            [idFav]="ficha.id"
+            ></app-ficha-cine>
+
+
+
+    </div>
+
+</ng-template>
 
