@@ -58,3 +58,20 @@
     bottom: 10px;
 }
 
+
+/* Adaptación dispositivos móviles */
+
+@media screen and (max-width: 815px) {
+
+    .contenidoFicha .titulo {
+        left: 0px;
+        z-index: 100;
+        top: 240px;
+    }
+
+    .contenidoFicha .estrellaFav {
+        z-index: 100;
+        bottom: 10px;
+    }
+    
+}
