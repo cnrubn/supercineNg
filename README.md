@@ -1,27 +1,16 @@
-# SupercineNg
+## Super Top Cine
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+## https://topcine.netlify.app
 
-## Development server
+### Después de que Top Cine fuera creado con JavaScript había que ir un paso más allá y reproducir y por supuesto mejorar ese proyecto ahora con Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### · Trending: Esta sección es la vista en el Top Cine original, muestra las películas en tendencias de ese día. La información inicial es más reducida ahora, pero si quieres saber más de la película solo tienes que pulsar sobre ella y te llevará a una ficha personalizada de la misma.
+### · Favoritos: Tanto en las secciones de Trending como de Busqueda tendrás la opción de marcar como favoritas las películas que elijas y aparecerán en esta sección.
+### · Búsqueda: Se podría haber integrado como una posibilidad global, pero quería darle protagonismo con su propia sección. Permite la búsqueda de practicamente cualquier película.
 
-## Code scaffolding
+![trending](https://user-images.githubusercontent.com/75250742/178963009-a81c17e5-7d7e-4e6d-a091-1fea1f42e2e4.png)
+![ficha personalizada](https://user-images.githubusercontent.com/75250742/178963077-aa0ee77b-e9f6-453c-870c-0e04313873d9.png)
+![favoritos](https://user-images.githubusercontent.com/75250742/178963040-d959a563-6e2c-4070-82b1-be784aa4baed.png)
+![búsqueda](https://user-images.githubusercontent.com/75250742/178963065-70d8b4fa-a18f-4a19-9e17-e475232223a7.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
