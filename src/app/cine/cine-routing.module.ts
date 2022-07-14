@@ -9,11 +9,11 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      {path: 'trending', component: TrendingComponent},
+      {path: '', component: TrendingComponent},
       {path: 'favoritos', component: FavoritosComponent},
       {path: 'busqueda', component: BusquedaComponent},
       {path: 'info/:id', component: InfoPeliComponent},
-      {path: '**', redirectTo: 'trending'}
+      {path: '**', redirectTo: ''}
     ]
   }
 ];
